@@ -4,166 +4,366 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CircuitCraft | Custom PCB Design Services</title>
-    <style>
-        :root {
-            --primary: #00ff88;
-            --dark: #121212;
-            --gray: #1e1e1e;
-            --text: #ffffff;
-            --text-muted: #a0a0a0;
-        }
+    <meta name="description" content="Professional PCB design services — schematic capture, multi-layer layout, DFM review, and Gerber delivery. Turnaround from 5 days.">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--dark); color: var(--text); line-height: 1.6; scroll-behavior: smooth; }
-        
-        header { background-color: var(--gray); padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary); text-decoration: none; }
-        nav ul { list-style: none; display: flex; gap: 2rem; }
-        nav a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        nav a:hover { color: var(--primary); }
-        
-        .btn { background-color: var(--primary); color: var(--dark); padding: 0.8rem 1.5rem; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; text-decoration: none; transition: 0.3s; }
-        .btn:hover { background-color: #00cc6a; transform: translateY(-2px); }
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="CircuitCraft | Custom PCB Design Services">
+    <meta property="og:description" content="Professional PCB design services — schematic capture, multi-layer layout, DFM review, and Gerber delivery. Turnaround from 5 days.">
+    <meta property="og:image"       content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80">
+    <meta name="twitter:card"       content="summary_large_image">
 
-        .hero { padding: 8rem 5%; text-align: center; background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') center/cover; }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-        .hero h1 span { color: var(--primary); }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem; }
+    <!-- Performance: preconnect to image CDN -->
+    <link rel="preconnect" href="https://images.unsplash.com">
 
-        .section { padding: 5rem 5%; }
-        .bg-gray { background-color: var(--gray); }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--text); }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background-color: var(--dark); padding: 2rem; border-radius: 8px; border-top: 4px solid var(--primary); }
-        
-        /* Portfolio */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-        .portfolio-item { height: 200px; background-color: #333; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic; background-size: cover; background-position: center; }
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 
-        /* Calculator & Form */
-        .calc-form-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto; }
-        .form-group { margin-bottom: 1.5rem; text-align: left; }
-        label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); }
-        input, select, textarea { width: 100%; padding: 0.8rem; border-radius: 4px; border: 1px solid #333; background-color: var(--dark); color: var(--text); }
-        .result-box { margin-top: 1.5rem; padding: 1.5rem; background-color: rgba(0, 255, 136, 0.1); border: 1px solid var(--primary); border-radius: 4px; text-align: center; font-size: 1.5rem; font-weight: bold; color: var(--primary); }
-
-        footer { background-color: var(--gray); text-align: center; padding: 2rem; color: var(--text-muted); border-top: 1px solid #333; }
-
-        @media (max-width: 768px) { header { flex-direction: column; gap: 1rem; } }
-    </style>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "CircuitCraft PCB Designs",
+        "description": "Custom PCB design services including schematic capture, multi-layer layout, and DFM review.",
+        "url": "https://circuitcraft.example.com",
+        "serviceType": "PCB Design"
+    }
+    </script>
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo">&lt;/CircuitCraft&gt;</a>
-        <nav>
-            <ul>
+    <!-- Skip to main content (keyboard / screen-reader users) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header id="site-header">
+        <a href="#" class="logo" aria-label="CircuitCraft home">&lt;/CircuitCraft&gt;</a>
+        <nav aria-label="Primary navigation">
+            <button class="menu-toggle" id="menuToggle"
+                    aria-expanded="false"
+                    aria-controls="primary-nav"
+                    aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul id="primary-nav" role="list">
                 <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#quote">Get Quote</a></li>
+                <li><a href="#testimonials">Clients</a></li>
+                <li><a href="#quote" class="btn btn-nav">Get Quote</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Custom <span>PCB Design</span> for Innovators</h1>
-        <p>From schematic capture to mass production, we turn your hardware ideas into reality with high-quality, manufacturable printed circuit boards.</p>
-        <a href="#quote" class="btn">Start Your Project</a>
-    </section>
+    <main id="main-content">
 
-    <section id="services" class="section bg-gray">
-        <h2 class="section-title">Our Capabilities</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Schematic Capture</h3>
-                <p>Translating concepts into precise, error-free schematics ready for layout.</p>
-            </div>
-            <div class="card">
-                <h3>PCB Layout</h3>
-                <p>Expert routing for complex digital, analog, RF, and mixed-signal boards.</p>
-            </div>
-            <div class="card">
-                <h3>DFM & Prototyping</h3>
-                <p>Design for Manufacturability checks to ensure your board is ready for the fab house.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="section">
-        <h2 class="section-title">Recent Projects</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1590240960537-8e68db3cf9d9?auto=format&fit=crop&w=600&q=80');"></div>
-            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=600&q=80');"></div>
-            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=600&q=80');"></div>
-            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1563207153-f403bf289096?auto=format&fit=crop&w=600&q=80');"></div>
-        </div>
-    </section>
-
-    <section id="quote" class="section bg-gray">
-        <h2 class="section-title">Estimate & Contact</h2>
-        <div class="calc-form-container">
-            
-            <!-- Calculator -->
-            <div class="card">
-                <h3>Quick Estimate Calculator</h3>
-                <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">Get a rough estimate for your design layout.</p>
-                <div class="form-group">
-                    <label>Number of Layers</label>
-                    <select id="layers">
-                        <option value="100">2 Layers</option>
-                        <option value="250">4 Layers</option>
-                        <option value="450">6 Layers</option>
-                        <option value="700">8+ Layers</option>
-                    </select>
+        <!-- Hero -->
+        <section class="hero" aria-label="Introduction">
+            <div class="hero-content">
+                <h1>Your Idea &rarr;<br><span>Working Hardware</span>, Fast</h1>
+                <p>End-to-end PCB design services &mdash; from first schematic to production-ready Gerbers. Precise, manufacturable, on time.</p>
+                <div class="hero-actions">
+                    <a href="#quote"     class="btn">Start Your Project</a>
+                    <a href="#portfolio" class="btn btn-outline">See Our Work</a>
                 </div>
-                <div class="form-group">
-                    <label>Board Complexity</label>
-                    <select id="complexity">
-                        <option value="1">Simple (Basic components)</option>
-                        <option value="1.5">Medium (Microcontrollers, sensors)</option>
-                        <option value="2.5">High (BGA, RF, High-speed)</option>
-                    </select>
+            </div>
+        </section>
+
+        <!-- Stats strip -->
+        <section class="stats-strip" aria-label="Key figures">
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Boards Shipped</span>
                 </div>
-                <button class="btn" style="width: 100%;" onclick="calculateQuote()">Calculate Estimate</button>
-                <div class="result-box" id="calcResult">Estimated Cost: $100</div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5&ndash;14</span>
+                    <span class="stat-label">Day Turnaround</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">DFM Pass Rate</span>
+                </div>
             </div>
+        </section>
 
-            <!-- Contact Form -->
-            <div class="card">
-                <h3>Send Us Details</h3>
-                <!-- To make this work, sign up for free at formspree.io and replace YOUR_FORM_ID below -->
-                <form action="https://formspree.io/f/mbdzvvkq" method="POST">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" name="name" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" name="email" required placeholder="john@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Project Details</label>
-                        <textarea name="message" rows="4" required placeholder="Tell us about your PCB requirements..."></textarea>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
-                </form>
+        <!-- Services -->
+        <section id="services" class="section bg-gray">
+            <div class="section-inner">
+                <h2 class="section-title">Our Capabilities</h2>
+                <p class="section-subtitle">Full-stack PCB design expertise across every stage of your hardware project.</p>
+                <div class="grid grid-4">
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">📐</div>
+                        <h3>Schematic Capture</h3>
+                        <p>Precise, hierarchical schematics with full component research, symbol creation, and ERC sign-off before layout begins.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">🔧</div>
+                        <h3>PCB Layout</h3>
+                        <p>Expert routing for 2&ndash; to 16-layer boards &mdash; digital, analog, RF, high-speed differential pairs, and mixed-signal designs.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">✅</div>
+                        <h3>DFM &amp; DFT Review</h3>
+                        <p>Design-for-Manufacturability and Design-for-Test checks against IPC standards before a single Gerber file leaves our desk.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">📦</div>
+                        <h3>Production Handoff</h3>
+                        <p>Complete fabrication package: Gerbers, drill files, BOM, centroid&thinsp;/&thinsp;pick-and-place data, and fab-house liaison on your behalf.</p>
+                    </article>
+                </div>
             </div>
+        </section>
 
+        <!-- Process -->
+        <section id="process" class="section">
+            <div class="section-inner">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">A clear, collaborative process with no surprises.</p>
+                <ol class="process-list" aria-label="Project process steps">
+                    <li class="process-step">
+                        <div class="step-number" aria-hidden="true">01</div>
+                        <div class="step-body">
+                            <h3>Discovery Call</h3>
+                            <p>We learn your requirements, constraints, and timeline. You get a fixed-price quote within 24&nbsp;hours.</p>
+                        </div>
+                    </li>
+                    <li class="process-step">
+                        <div class="step-number" aria-hidden="true">02</div>
+                        <div class="step-body">
+                            <h3>Schematic Design</h3>
+                            <p>Clean, hierarchical schematics delivered for your review. We iterate until you&rsquo;re happy before touching the layout.</p>
+                        </div>
+                    </li>
+                    <li class="process-step">
+                        <div class="step-number" aria-hidden="true">03</div>
+                        <div class="step-body">
+                            <h3>PCB Layout</h3>
+                            <p>Optimised placement and routing with SI&thinsp;/&thinsp;PI considerations baked in. Progress updates every two days.</p>
+                        </div>
+                    </li>
+                    <li class="process-step">
+                        <div class="step-number" aria-hidden="true">04</div>
+                        <div class="step-body">
+                            <h3>DFM Review</h3>
+                            <p>Automated DRC plus manual review against your chosen fab&rsquo;s capabilities. Issues fixed before delivery.</p>
+                        </div>
+                    </li>
+                    <li class="process-step">
+                        <div class="step-number" aria-hidden="true">05</div>
+                        <div class="step-body">
+                            <h3>Gerber Delivery</h3>
+                            <p>Full production package handed off. We stay available for fab queries during manufacturing.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Tools / Tech Stack -->
+        <section class="section bg-gray" aria-label="Tools and software we use">
+            <div class="section-inner">
+                <h2 class="section-title">Tools We Use</h2>
+                <p class="section-subtitle">Industry-standard EDA software so your files work with any fab or design team.</p>
+                <ul class="tech-list" role="list">
+                    <li class="tech-badge">KiCad</li>
+                    <li class="tech-badge">Altium Designer</li>
+                    <li class="tech-badge">Eagle&thinsp;/&thinsp;Fusion&nbsp;360</li>
+                    <li class="tech-badge">LTspice</li>
+                    <li class="tech-badge">HyperLynx</li>
+                    <li class="tech-badge">Solidworks PCB</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="section">
+            <div class="section-inner">
+                <h2 class="section-title">Recent Projects</h2>
+                <p class="section-subtitle">A selection of boards designed and delivered in the past 18&nbsp;months.</p>
+                <div class="portfolio-grid">
+                    <figure class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1590240960537-8e68db3cf9d9?auto=format&fit=crop&w=600&q=80"
+                             alt="Populated 4-layer IoT gateway PCB featuring an ESP32 module and LoRa radio"
+                             loading="lazy" width="600" height="450">
+                        <figcaption>
+                            <h3>IoT Gateway</h3>
+                            <p>ESP32 + LoRa &middot; 4&nbsp;Layers</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=600&q=80"
+                             alt="6-layer industrial motor controller PCB with STM32 processor and power stage"
+                             loading="lazy" width="600" height="450">
+                        <figcaption>
+                            <h3>Motor Controller</h3>
+                            <p>STM32 &middot; 6&nbsp;Layers &middot; Industrial</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=600&q=80"
+                             alt="2-layer analog sensor breakout board with precision op-amp front-end circuitry"
+                             loading="lazy" width="600" height="450">
+                        <figcaption>
+                            <h3>Sensor Breakout</h3>
+                            <p>Analog Front-End &middot; 2&nbsp;Layers</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1563207153-f403bf289096?auto=format&fit=crop&w=600&q=80"
+                             alt="8-layer SoC development board with BGA package routing and high-speed memory interface"
+                             loading="lazy" width="600" height="450">
+                        <figcaption>
+                            <h3>SoC Dev Board</h3>
+                            <p>BGA Routing &middot; 8&nbsp;Layers</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="section bg-gray">
+            <div class="section-inner">
+                <h2 class="section-title">What Clients Say</h2>
+                <div class="testimonial-grid">
+                    <blockquote class="testimonial-card">
+                        <p>CircuitCraft delivered our motor controller layout in just 10&nbsp;days &mdash; clean routing, no DRC errors, and the fab had zero questions. We&rsquo;ll use them for every project going forward.</p>
+                        <footer>
+                            <strong>Alejandro R.</strong>
+                            <span>CTO, RoboFlex</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card">
+                        <p>The DFM feedback alone saved us two costly board spins. They caught a via-in-pad issue our own team missed, and fixed it the same day.</p>
+                        <footer>
+                            <strong>Sarah K.</strong>
+                            <span>Hardware Lead, SensorGrid</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card">
+                        <p>Professional schematics and a clean, well-annotated layout from day one. Communication was excellent and the quote was exactly what we paid.</p>
+                        <footer>
+                            <strong>James T.</strong>
+                            <span>Founder, OpenMotes</span>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote: Calculator + Contact Form -->
+        <section id="quote" class="section">
+            <div class="section-inner">
+                <h2 class="section-title">Get a Quote</h2>
+                <p class="section-subtitle">Use the estimator to get a ballpark, then send us the details and we&rsquo;ll reply within one business day.</p>
+                <div class="calc-form-container">
+
+                    <!-- Calculator -->
+                    <div class="card">
+                        <h3>Quick Estimate Calculator</h3>
+                        <p class="card-note">Rough pricing guide &mdash; exact quotes provided after a brief call.</p>
+                        <div class="form-group">
+                            <label for="layers">Number of Layers</label>
+                            <select id="layers">
+                                <option value="100">2 Layers</option>
+                                <option value="250">4 Layers</option>
+                                <option value="450">6 Layers</option>
+                                <option value="700">8+ Layers</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="complexity">Board Complexity</label>
+                            <select id="complexity">
+                                <option value="1">Simple &mdash; basic passives &amp; through-hole</option>
+                                <option value="1.5">Medium &mdash; MCU, sensors, SMD</option>
+                                <option value="2.5">High &mdash; BGA, RF, high-speed differential</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Turnaround</label>
+                            <select id="urgency">
+                                <option value="1">Standard (10&ndash;14 days)</option>
+                                <option value="1.4">Rush (5&ndash;7 days, +40%)</option>
+                            </select>
+                        </div>
+                        <button class="btn" id="calcBtn" style="width:100%" type="button">Calculate Estimate</button>
+                        <div class="result-box" id="calcResult" aria-live="polite" aria-atomic="true">
+                            Select options above and click Calculate
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="card">
+                        <h3>Send Us Details</h3>
+                        <form id="contactForm" action="https://formspree.io/f/mbdzvvkq" method="POST" novalidate>
+                            <div class="form-group">
+                                <label for="name">Your Name <span class="required" aria-hidden="true">*</span></label>
+                                <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Smith">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                                <input type="email" id="email" name="email" required autocomplete="email" placeholder="jane@company.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="board-layers">Number of Layers</label>
+                                <select id="board-layers" name="layers">
+                                    <option value="">— select —</option>
+                                    <option value="2">2 Layers</option>
+                                    <option value="4">4 Layers</option>
+                                    <option value="6">6 Layers</option>
+                                    <option value="8+">8+ Layers</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Project Details <span class="required" aria-hidden="true">*</span></label>
+                                <textarea id="message" name="message" rows="4" required
+                                    placeholder="Describe your board &mdash; function, key ICs, size constraints, deadline&hellip;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-submit" id="submitBtn">Send Request</button>
+                            <div class="form-feedback" id="formFeedback" role="alert" aria-live="polite"></div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="#" class="logo" aria-label="CircuitCraft home">&lt;/CircuitCraft&gt;</a>
+                <p>Professional PCB design services.<br>From schematic to production.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <h4>Quick Links</h4>
+                <ul role="list">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Clients</a></li>
+                    <li><a href="#quote">Get Quote</a></li>
+                </ul>
+            </nav>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><a href="mailto:hello@circuitcraft.example.com">hello@circuitcraft.example.com</a></p>
+                <p>Response within 1 business day</p>
+            </div>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 CircuitCraft PCB Designs. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CircuitCraft PCB Designs. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script>
-        function calculateQuote() {
-            const layers = parseFloat(document.getElementById('layers').value);
-            const complexity = parseFloat(document.getElementById('complexity').value);
-            const total = layers * complexity;
-            document.getElementById('calcResult').innerText = 'Estimated Cost: $' + total.toFixed(2);
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
